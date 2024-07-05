@@ -1,0 +1,29 @@
+<tr id="autor-{{autor.id}}">
+    
+    <th scope="row">{{autor.id}}</th>
+    <td>{{autor.nome}}</td>
+    <td>{{autor.livro}}</td>
+    <td>
+        <button class="btn btn-secondary"  
+            c-get="{{url_for('autor.detalhe_autor',autor_id=autor.id)}}"
+            c-target="#exibir-autor"
+            data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Ver
+        </button>
+
+        <button class="btn btn-primary"  
+            c-get="{{url_for('autor.form_edit_autor',autor_id=autor.id)}}"
+            c-target="#form-autores">
+                Editar
+        </button>
+
+
+
+        <button class="btn btn-danger"
+            c-delete="{{url_for('autor.delete_autor',autor_id=autor.id)}}"
+            c-remove-closest="tr">
+                Deletar
+        
+    </button>
+    </td>
+</tr>
